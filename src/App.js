@@ -930,7 +930,6 @@ function drawHUD(ctx,g,w,h,dpr){
   // Center: Pause button (two vertical bars)
   ctx.save();
   const pauseSize = 36*dpr;
-  const pauseX = (w - pauseSize)/2;
   ctx.fillStyle = "rgba(0,0,0,0.4)";
   ctx.beginPath(); ctx.arc(w/2, hudY + hudH/2, pauseSize/2, 0, Math.PI*2); ctx.fill();
   ctx.strokeStyle = "rgba(168,85,247,0.4)";
@@ -1343,7 +1342,6 @@ function GameScreen({ nameObjs, onWin, onLose, onQuit }) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
-    const topY = 16 + 20; // padding + half button height
     if (Math.abs(x - centerX) < 24 && y < 56) {
       setPaused(true);
     }
